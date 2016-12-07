@@ -471,8 +471,10 @@ public class FrontEnd_NCR {
 
 			while ((cur = br.readLine()) != null) {
 				try {
-					int acct = Integer.parseInt(cur);
-					accounts.add(acct);
+					if(validateAccount(cur)){
+						int acct = Integer.parseInt(cur);
+						accounts.add(acct);
+					}
 				} catch (NumberFormatException e) {
 					System.out.println(ACCT);
 					System.exit(0);

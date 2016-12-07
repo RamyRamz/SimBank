@@ -74,7 +74,15 @@ public class Account{
 	 * acceptable for export to the master accounts file
 	 */
 	public String toString(){
-		return accountNum + " " + balance + " " + name;
+		String bal = balance + "",
+			   num = accountNum + "";
+		while(bal.length() < 3){
+			bal = "0" + bal;
+		}
+		while(num.length() < 8){
+			num = "0" + num;
+		}
+		return num + " " + bal + " " + name;
 	}
 	
 }

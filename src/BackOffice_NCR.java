@@ -384,8 +384,11 @@ public class BackOffice_NCR {
 			}
 
 			Collections.sort(temp);
-			for (int number : temp)
+			for (int number : temp){
+				if(number < 10000000)
+					continue;
 				out.write(number + "\n");
+			}
 			out.write("00000000");
 		} catch (FileNotFoundException e) {
 			System.out.println("Could not write to file.");
